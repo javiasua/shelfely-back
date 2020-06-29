@@ -18,6 +18,7 @@ const userBooksSchema = new mongoose.Schema(
       description: String,
       alreadyRead : Boolean,
       category : String,
+      preview : String,
       user: {
           type: mongoose.Schema.Types.ObjectId,
           ref: 'User'
