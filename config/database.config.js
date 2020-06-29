@@ -5,7 +5,7 @@ let configOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true 
 }
-mongoose.connect('mongodb://localhost:27017/Shelfely', configOptions)
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/Shelfely', configOptions)
     .then(() => {
         console.log('Yayyy Database is connected');
     })
