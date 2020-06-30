@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ManishPoduval/mongoose-express-starter.git"
+    "url": "git+https://github.com/javiasua/shelfely-back"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ManishPoduval/mongoose-express-starter/issues"
+    "url": "https://github.com/javiasua/shelfely-back/issues"
   },
-  "homepage": "https://github.com/ManishPoduval/mongoose-express-starter#readme",
+   "homepage": "https://github.com/javiasua/shelfely-back#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",

@@ -17,9 +17,9 @@ router.get('/books', (req, res) => {
 })
 
 router.post('/create', (req, res) => {  
-    const {title, author, date,image,description ,alreadyRead,category,id} = req.body;
+    const {title, author, date,image,description ,alreadyRead,category,preview,id} = req.body;
     console.log(req.body)
-    BookModel.create({title: title, author: author, date: date,image:image,description:description,alreadyRead:alreadyRead,category:category,user:id})
+    BookModel.create({title: title, author: author, date: date,image:image,description:description,alreadyRead:alreadyRead,category:category,preview:preview,user:id})
           .then((response) => {
                res.status(200).json(response)
           })
