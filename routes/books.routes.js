@@ -59,8 +59,8 @@ router.delete('/books/:id', (req, res) => {
 
 router.patch('/books/:id', (req, res) => {
     let id = req.params.id
-    const {title, author, date,description} = req.body;
-    BookModel.findByIdAndUpdate(id, {$set: {title: title, author: author, date: date,description:description}})
+    const {title, author, date,description,alreadyRead} = req.body;
+    BookModel.findByIdAndUpdate(id, {$set: {title: title, author: author, date: date,description:description,alreadyRead:alreadyRead}})
           .then((response) => {
                res.status(200).json(response)
           })
