@@ -7,6 +7,7 @@ const uploader = require('../config/cloudinary.config.js');
 
 
 let middleware = (req, res, next) => {
+    console.log(req.file)
     if (!req.file) {
         res.json({
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png'

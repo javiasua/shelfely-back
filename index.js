@@ -4,6 +4,8 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 require("dotenv").config();
 var path = require('path');
+const fileUpload = require('express-fileupload')
+
 
 
 //ensure database is connected
@@ -36,6 +38,8 @@ app.use(
   })
 );
 
+
+
 const logger = require('morgan');
 app.use(logger('dev'));
 
@@ -46,7 +50,7 @@ app.use(cookieParser());
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()) //crucial for post requests from client
-
+//app.use(fileUpload())
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -58,6 +62,11 @@ const authRoutes = require('./routes/auth.routes')
 app.use('/api', authRoutes);
 const fileUploads = require('./routes/file-upload.routes')
 app.use('/api',fileUploads)
+
+app.use((req, res, next) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 app.listen(process.env.PORT || 5000, '0.0.0.0', () => {
     console.log('Server is running')
